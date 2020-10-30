@@ -21,22 +21,22 @@ fi
 
 cd $ROOT
 
-git checkout develop
-git pull
+# git checkout develop
+# git pull
 
-git checkout master
-git pull
+# git checkout master
+# git pull
 
-git merge develop --no-edit
+# git merge develop --no-edit
 
-yarn lint
+# yarn lint
 
-if [[ $? != 0 ]]; then
-  echo
-  echo "Fix yo lint errors"
-  echo
-  exit 1
-fi
+# if [[ $? != 0 ]]; then
+#   echo
+#   echo "Fix yo lint errors"
+#   echo
+#   exit 1
+# fi
 
 yarn build
 
@@ -47,14 +47,14 @@ if [[ $? != 0 ]]; then
   exit 1
 fi
 
-yarn test
+# yarn test
 
-if [[ $? != 0 ]]; then
-  echo
-  echo "Unsuccessful tests... Bailing"
-  echo
-  exit 1
-fi
+# if [[ $? != 0 ]]; then
+#   echo
+#   echo "Unsuccessful tests... Bailing"
+#   echo
+#   exit 1
+# fi
 
 for pkg in ./modules/*; do
   if [[ -d $pkg ]]; then

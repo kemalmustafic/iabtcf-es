@@ -1,32 +1,26 @@
-import {CmpApiModel} from '../../src/CmpApiModel';
-import {TestUtils} from '../TestUtils';
-import {TCModelFactory, makeRandomIntArray} from '@iabtcf/testing';
-import {TCString} from '@iabtcf/core';
+import { CmpApiModel } from "../../src/CmpApiModel";
+import { TestUtils } from "../TestUtils";
+import { TCModelFactory, makeRandomIntArray } from "didomi-iabtcf-testing";
+import { TCString } from "didomi-iabtcf-core";
 
-describe('response->InAppTCData', (): void => {
-
-  it('should create a InAppTCData based on the TCModel with unrestricted vendors', (): void => {
-
+describe("response->InAppTCData", (): void => {
+  it("should create a InAppTCData based on the TCModel with unrestricted vendors", (): void => {
     CmpApiModel.gdprApplies = true;
     CmpApiModel.tcModel = TCModelFactory.withGVL();
     CmpApiModel.tcString = TCString.encode(CmpApiModel.tcModel);
 
     TestUtils.inAppTCDataToTCModel();
-
   });
 
-  it('should create a InAppTCData based on the TCModel with vendors', (): void => {
-
+  it("should create a InAppTCData based on the TCModel with vendors", (): void => {
     CmpApiModel.gdprApplies = true;
     CmpApiModel.tcModel = TCModelFactory.withGVL();
     CmpApiModel.tcString = TCString.encode(CmpApiModel.tcModel);
 
     TestUtils.inAppTCDataToTCModel(makeRandomIntArray(1, 25, 10));
-
   });
 
-  it('should encode purpose restrictions', (): void => {
-
+  it("should encode purpose restrictions", (): void => {
     const tcModel = TCModelFactory.withGVL();
 
     CmpApiModel.gdprApplies = true;
@@ -34,7 +28,5 @@ describe('response->InAppTCData', (): void => {
     CmpApiModel.tcString = TCString.encode(CmpApiModel.tcModel);
 
     TestUtils.inAppTCDataToTCModel();
-
   });
-
 });

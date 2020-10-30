@@ -1,6 +1,6 @@
-import {CmpStatus, DisplayStatus, EventStatus} from './status';
-import {EventListenerQueue} from './EventListenerQueue';
-import {TCModel} from '@iabtcf/core';
+import { CmpStatus, DisplayStatus, EventStatus } from "./status";
+import { EventListenerQueue } from "./EventListenerQueue";
+import { TCModel } from "didomi-iabtcf-core";
 
 /**
  * Class holds shareable data across cmp api and provides change event listener for TcModel.
@@ -8,9 +8,8 @@ import {TCModel} from '@iabtcf/core';
  * where CmpApi sets data and Commands read the data.
  */
 export class CmpApiModel {
-
-  public static readonly apiVersion = '2';
-  public static readonly tcfPolicyVersion = 2;
+  public static readonly apiVersion = "2";
+  public static tcfPolicyVersion: number;
   public static readonly eventQueue = new EventListenerQueue();
   public static cmpStatus: CmpStatus = CmpStatus.LOADING;
   public static disabled = false;
@@ -24,19 +23,17 @@ export class CmpApiModel {
   public static tcString: string;
 
   public static reset(): void {
-
     delete this.cmpId;
     delete this.cmpVersion;
     delete this.eventStatus;
     delete this.gdprApplies;
     delete this.tcModel;
     delete this.tcString;
+    delete this.tcfPolicyVersion;
 
     this.cmpStatus = CmpStatus.LOADING;
     this.disabled = false;
     this.displayStatus = DisplayStatus.HIDDEN;
     this.eventQueue.clear();
-
   }
-
 }

@@ -89,9 +89,9 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@iabtcf/testing@1.1.0-1":
+"didomi-iabtcf-testing@1.1.0-1":
   version "1.1.0-1"
-  resolved "https://registry.yarnpkg.com/@iabtcf/testing/-/testing-1.1.0-1.tgz#849c123ce802a09db06c75e6620b3cd1c1699dbc"
+  resolved "https://registry.yarnpkg.com/didomi-iabtcf-testing/-/testing-1.1.0-1.tgz#849c123ce802a09db06c75e6620b3cd1c1699dbc"
   integrity sha512-jcLbfvZ+NvQkFaHTG9sm930GBwUUUJlGafRJClk5QDw9nesy23em/JeU6RjZJ22rFhvExV/Yc0SkqxeLfv7wRw==
   dependencies:
     "@types/sinon" "^7.0.13"
